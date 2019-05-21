@@ -9,8 +9,8 @@ const App = () => {
 
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition(
-    position => this.setState({ lat: position.coords.latitude }),
-    err => this.setState({ errorMessage: err.message })
+    position => setLat(position.coords.latitude),
+    err => setErrorMessage(err.message)
     );
   }, []);
 };
