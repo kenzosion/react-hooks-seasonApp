@@ -13,6 +13,16 @@ const App = () => {
     err => setErrorMessage(err.message)
     );
   }, []);
+
+
+  let content;
+  if (errorMessage) {
+    content = <div>Error: {errorMessage}</div>;
+  } else if (lat) {
+    content = <SeasonDisplay lat={lat} />;
+  } else {
+    content = <Spinner message="Please accept location request" />;
+  }
 };
 
 class App extends React.Component {
